@@ -201,9 +201,8 @@
         
         // Menampilkan semua barang saat halaman dimuat
         Cari("");
-      });
 
-      //Menghapus jumlah dari troli menjadi kosong
+        //Menghapus jumlah dari troli menjadi kosong
       document.getElementById("cart").addEventListener("click", function () {
           if (totalBarangDiKeranjang <= 0) {
             Swal.fire('Info!', 'Keranjang Kosong Bray!', 'info');
@@ -226,6 +225,9 @@
             });
           }
         });
+      });
+
+      
     </script>
   </body>
 </html>
