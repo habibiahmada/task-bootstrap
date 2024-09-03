@@ -205,38 +205,27 @@
 
       //Menghapus jumlah dari troli menjadi kosong
       document.getElementById("cart").addEventListener("click", function () {
-        if (totalBarangDiKeranjang <= 0) {
-          Swal.fire(
-            'Info!',
-            'Keranjang Kosong Bray!',
-            'info'
-          );
-        } else if (
-          totalBarangDiKeranjang > 0 ||
-          totalBarangDiKeranjang === `9+`
-        ) {
-          Swal.fire({
-            titlirmae: "Konfsi",
-            text: "Bener nih mau dikosongin!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes King!",
-            cancelButtonText: "No Sir!",
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire(
-                "Berhasil!",
-                "Udah kosong bray!",
-                "success"
-              );
-              totalBarangDiKeranjang = 0;
-              document.getElementById("cartItemCount").textContent = `(0)`;
-            }
-          });
-        }
-      });
+          if (totalBarangDiKeranjang <= 0) {
+            Swal.fire('Info!', 'Keranjang Kosong Bray!', 'info');
+          } else {
+            Swal.fire({
+              title: "Konfirmasi",
+              text: "Bener nih mau dikosongin!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes King!",
+              cancelButtonText: "No Sir!",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                Swal.fire("Berhasil!", "Udah kosong bray!", "success");
+                totalBarangDiKeranjang = 0;
+                document.getElementById("cartItemCount").textContent = `(0)`;
+              }
+            });
+          }
+        });
     </script>
   </body>
 </html>
