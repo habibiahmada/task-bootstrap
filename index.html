@@ -204,20 +204,32 @@
         //Menghapus jumlah dari troli menjadi kosong
         document.getElementById("cart").addEventListener("click", function () {
           if (totalBarangDiKeranjang <= 0) {
-            Swal.fire("Info!", "Keranjang Kosong Bray!", "info");
+            Swal.fire({
+              title: "Info!",
+              text: "Keranjang Kosong Bray!",
+              icon: "info",
+              confirmButtonText: "Sip!",
+              confirmButtonColor: "#007AFF",
+            });
           } else {
             Swal.fire({
               title: "Konfirmasi",
-              text: "Bener nih mau dikosongin!",
+              text: "Bener nih mau dikosongin?",
               icon: "warning",
               showCancelButton: true,
-              confirmButtonColor: "#3085d6",
+              confirmButtonColor: "#007AFF",
               cancelButtonColor: "#d33",
               confirmButtonText: "Yes King!",
               cancelButtonText: "No Sir!",
             }).then((result) => {
               if (result.isConfirmed) {
-                Swal.fire("Berhasil!", "Udah kosong bray!", "success");
+                Swal.fire({
+                  title: "Berhasil!",
+                  text: "Udah kosong bray!",
+                  icon: "success",
+                  confirmButtonText: "Yaudah!",
+                  confirmButtonColor: "#007AFF",
+                });
                 totalBarangDiKeranjang = 0;
                 document.getElementById("cartItemCount").textContent = `(0)`;
               }
